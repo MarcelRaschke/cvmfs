@@ -79,6 +79,7 @@ class SyncItem {
   inline bool IsSocket()          const { return IsType(kItemSocket);          }
   inline bool IsGraftMarker()     const { return IsType(kItemMarker);          }
   inline bool IsExternalData()    const { return external_data_;               }
+  inline bool IsDirectIo()        const { return direct_io_;                   }
 
   inline bool IsWhiteout()        const { return whiteout_;                    }
   inline bool IsCatalogMarker()   const { return filename_ == ".cvmfscatalog"; }
@@ -106,6 +107,7 @@ class SyncItem {
 
   bool HasCatalogMarker()         const { return has_catalog_marker_;          }
   bool HasGraftMarker()           const { return graft_marker_present_;        }
+  bool HasCompressionAlgorithm()  const { return has_compression_algorithm_;   }
   bool IsValidGraft()             const { return valid_graft_;                 }
   bool IsChunkedGraft()           const { return graft_chunklist_;             }
 
@@ -114,12 +116,14 @@ class SyncItem {
   inline void SetContentHash(const shash::Any &hash) { content_hash_ = hash; }
   inline bool HasContentHash() const { return !content_hash_.IsNull(); }
   void SetExternalData(bool val) {external_data_ = val;}
+  void SetDirectIo(bool val) {direct_io_ = val;}
 
   inline zlib::Algorithms GetCompressionAlgorithm() const {
     return compression_algorithm_;
   }
   inline void SetCompressionAlgorithm(const zlib::Algorithms &alg) {
     compression_algorithm_ = alg;
+    has_compression_algorithm_ = true;
   }
 
   /**
@@ -286,6 +290,7 @@ class SyncItem {
   bool graft_marker_present_;         /**< .cvmfsgraft-$filename exists */
 
   bool external_data_;
+  bool direct_io_;
   std::string relative_parent_path_;
 
   /**
@@ -295,6 +300,8 @@ class SyncItem {
 
   // The compression algorithm for the file
   zlib::Algorithms compression_algorithm_;
+  // The compression algorithm has been set explicitly
+  bool has_compression_algorithm_;
 
   // Lazy evaluation and caching of results of file stats
   inline void StatRdOnly(const bool refresh = false) const {
