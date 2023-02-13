@@ -9,7 +9,6 @@ require (
 	github.com/docker/docker v0.0.0-20190123164140-de86ba27fbea
 	github.com/docker/go-connections v0.4.0 // indirect
 	github.com/docker/go-units v0.3.3 // indirect
-	github.com/gofrs/flock v0.8.0 // indirect
 	github.com/gogo/protobuf v1.2.0 // indirect
 	github.com/google/go-cmp v0.2.0 // indirect
 	github.com/google/uuid v1.2.0
@@ -23,9 +22,8 @@ require (
 	github.com/opencontainers/image-spec v1.0.1 // indirect
 	github.com/opencontainers/runc v0.0.8 // indirect
 	github.com/opencontainers/runtime-spec v1.0.1 // indirect
-	github.com/opencontainers/selinux v1.0.0 // indirect
+	github.com/opencontainers/selinux v1.3.1 // indirect
 	github.com/otiai10/copy v1.3.0
-	github.com/pkg/errors v0.8.1 // indirect
 	github.com/pkg/xattr v0.4.3
 	github.com/rubyist/lockfile v0.0.0-20140818014254-a66de41d77a7
 	github.com/sirupsen/logrus v1.3.0
