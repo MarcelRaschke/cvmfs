@@ -9,7 +9,6 @@ require (
 	github.com/docker/docker v0.0.0-20190123164140-de86ba27fbea
 	github.com/docker/go-connections v0.4.0 // indirect
 	github.com/docker/go-units v0.3.3 // indirect
-	github.com/gofrs/flock v0.8.0 // indirect
 	github.com/gogo/protobuf v1.2.0 // indirect
 	github.com/google/go-cmp v0.2.0 // indirect
 	github.com/google/uuid v1.2.0
@@ -36,7 +35,7 @@ require (
 	golang.org/x/crypto v0.0.0-20190123085648-057139ce5d2b // indirect
 	golang.org/x/net v0.0.0-20190119204137-ed066c81e75e // indirect
 	golang.org/x/sync v0.0.0-20181221193216-37e7f081c4d4 // indirect
-	golang.org/x/sys v0.0.0-20201101102859-da207088b7d1
+	golang.org/x/sys v0.1.0
 	golang.org/x/time v0.0.0-20181108054448-85acf8d2951c // indirect
 	google.golang.org/grpc v1.18.0 // indirect
 	gopkg.in/yaml.v2 v2.2.2
